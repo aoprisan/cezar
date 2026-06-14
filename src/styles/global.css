@@ -1,0 +1,482 @@
+:root {
+  /* Paletă academică, formală */
+  --navy: #1f2a44;
+  --navy-deep: #16203a;
+  --maroon: #6b1f2a;
+  --maroon-soft: #8a3340;
+  --parchment: #f7f4ee;
+  --parchment-deep: #efe9df;
+  --ink: #23262d;
+  --ink-soft: #4a4f59;
+  --rule: #d8cfc0;
+  --gold: #b08d57;
+
+  --serif-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --serif-body: 'EB Garamond', Georgia, 'Times New Roman', serif;
+
+  --maxw: 56rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--parchment);
+  color: var(--ink);
+  font-family: var(--serif-body);
+  font-size: 1.2rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  width: min(var(--maxw), 100% - 3rem);
+  margin-inline: auto;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background:
+    linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: var(--parchment);
+  padding: clamp(3rem, 8vw, 6rem) 1.5rem clamp(3.5rem, 9vw, 6.5rem);
+  text-align: center;
+  border-bottom: 4px solid var(--gold);
+}
+
+.hero__inner {
+  width: min(46rem, 100%);
+  margin-inline: auto;
+}
+
+.hero__portrait {
+  width: clamp(9rem, 28vw, 12.5rem);
+  aspect-ratio: 1;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  background-color: var(--parchment-deep);
+}
+
+.hero__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__portrait-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif-display);
+  font-size: clamp(2.5rem, 9vw, 4rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--navy);
+  background: linear-gradient(160deg, var(--parchment), var(--parchment-deep));
+}
+
+.hero__honorific {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero__name {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 8vw, 4.4rem);
+  line-height: 1.05;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.hero__lifespan {
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  margin: 0 0 1.6rem;
+  color: rgba(247, 244, 238, 0.85);
+}
+
+.hero__roles {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.hero__roles p {
+  margin: 0.15rem 0;
+}
+
+.hero__subrole {
+  color: rgba(247, 244, 238, 0.78);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.hero__epitaph {
+  margin: 2rem auto 0;
+  max-width: 38rem;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: rgba(247, 244, 238, 0.9);
+  border-top: 1px solid rgba(176, 141, 87, 0.4);
+  padding-top: 1.5rem;
+}
+
+/* ---------- Secțiuni ---------- */
+.section {
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section--research {
+  background-color: var(--parchment-deep);
+}
+
+.section__heading {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--maroon);
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+.section__heading::after {
+  content: '';
+  display: block;
+  width: 3.5rem;
+  height: 2px;
+  background-color: var(--gold);
+  margin: 0.9rem auto 0;
+}
+
+.section__dates {
+  text-align: center;
+  color: var(--ink-soft);
+  font-style: italic;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.2rem 0 2rem;
+}
+
+.section__dates-sep {
+  color: var(--gold);
+}
+
+.section__intro {
+  text-align: center;
+  max-width: 42rem;
+  margin: 1.5rem auto 2.5rem;
+  color: var(--ink-soft);
+}
+
+.prose p {
+  margin: 0 0 1.3rem;
+}
+
+.prose p:first-letter {
+  /* discret, doar pe primul paragraf via :first-child */
+}
+
+.prose p:first-child::first-letter {
+  font-family: var(--serif-display);
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 0.8;
+  float: left;
+  padding: 0.2rem 0.6rem 0 0;
+  color: var(--maroon);
+}
+
+/* ---------- Cronologie ---------- */
+.timeline {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 44rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8.5rem;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 2px;
+  background-color: var(--rule);
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1.5rem;
+  padding: 0.9rem 0;
+  position: relative;
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: calc(8.5rem - 5px);
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--maroon);
+  border: 2px solid var(--parchment);
+}
+
+.timeline__period {
+  text-align: right;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+  padding-top: 0.05rem;
+}
+
+.timeline__body {
+  padding-left: 1.2rem;
+}
+
+.timeline__role {
+  font-family: var(--serif-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+  color: var(--ink);
+}
+
+.timeline__detail {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+}
+
+/* ---------- Cercetare ---------- */
+.fields {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  padding: 0;
+  margin: 0 0 2.8rem;
+}
+
+.fields__item {
+  background-color: var(--navy);
+  color: var(--parchment);
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  font-size: 1.02rem;
+  letter-spacing: 0.02em;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.5rem;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.stats__item {
+  text-align: center;
+  background-color: var(--parchment);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--maroon);
+  padding: 1.6rem 1.2rem;
+}
+
+.stats__value {
+  display: block;
+  font-family: var(--serif-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--maroon);
+  line-height: 1;
+}
+
+.stats__label {
+  display: block;
+  margin-top: 0.7rem;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+/* ---------- Mărturii ---------- */
+.tributes {
+  display: grid;
+  gap: 2rem;
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.tribute {
+  margin: 0;
+  background-color: var(--parchment-deep);
+  border-left: 4px solid var(--gold);
+  padding: 1.8rem 2rem;
+}
+
+.section--research .tribute {
+  background-color: var(--parchment);
+}
+
+.tribute__quote {
+  margin: 0;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--ink);
+  position: relative;
+}
+
+.tribute__quote::before {
+  content: '\201C';
+  font-family: var(--serif-display);
+  font-size: 3rem;
+  color: var(--gold);
+  line-height: 0;
+  position: relative;
+  top: 0.6rem;
+  margin-right: 0.2rem;
+}
+
+.tribute__source {
+  margin-top: 1rem;
+  color: var(--maroon);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: var(--navy-deep);
+  color: rgba(247, 244, 238, 0.85);
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+  text-align: center;
+}
+
+.footer__remembrance {
+  font-style: italic;
+  font-size: 1.2rem;
+  max-width: 36rem;
+  margin: 0 auto 2.5rem;
+  color: var(--parchment);
+}
+
+.footer__sources-heading {
+  font-family: var(--serif-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.8rem;
+}
+
+.footer__sources ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer__sources a {
+  color: rgba(247, 244, 238, 0.85);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(176, 141, 87, 0.5);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer__sources a:hover,
+.footer__sources a:focus {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.footer__name {
+  font-family: var(--serif-display);
+  font-size: 1.3rem;
+  color: var(--parchment);
+  letter-spacing: 0.04em;
+  margin: 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(176, 141, 87, 0.3);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 34rem) {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .timeline::before {
+    left: 6px;
+  }
+
+  .timeline__item {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+    padding-left: 1.6rem;
+  }
+
+  .timeline__item::before {
+    left: 1px;
+    top: 0.5rem;
+  }
+
+  .timeline__period {
+    text-align: left;
+  }
+
+  .timeline__body {
+    padding-left: 0;
+  }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  .hero {
+    background: none;
+    color: #000;
+    border-bottom: 2px solid #000;
+  }
+
+  .hero__honorific,
+  .hero__epitaph,
+  .footer {
+    color: #000;
+  }
+
+  .section {
+    break-inside: avoid;
+  }
+}

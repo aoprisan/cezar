@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Portret comemorativ — fotografie de adăugat">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7f4ee"/>
+      <stop offset="1" stop-color="#efe9df"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <g fill="#1f2a44" opacity="0.85">
+    <circle cx="200" cy="158" r="62"/>
+    <path d="M88 340c0-62 50-112 112-112s112 50 112 112z"/>
+  </g>
+  <text x="200" y="384" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="20"
+        fill="#6b1f2a" letter-spacing="2">C. O.</text>
+</svg>

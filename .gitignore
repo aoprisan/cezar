@@ -1,0 +1,21 @@
+# Dependențe
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+*.tsbuildinfo
+
+# Loguri
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / sistem
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.local
